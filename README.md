@@ -5,7 +5,7 @@
 
 ---
 
-## ✨ Key Features
+## Key Features
 
 - **Secure Authentication:** User login and registration handled via Supabase Auth.
 - **Full CRUD Management:** Create, read, update, and delete tasks with real-time persistence.
