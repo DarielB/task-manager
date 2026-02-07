@@ -639,7 +639,7 @@
 }
 .language-section {
   padding: 10px 20px;
-  margin-top: auto; /* Posiciona acima da área do usuário */
+  margin-top: auto;
 }
 
 .lang-toggle-btn {

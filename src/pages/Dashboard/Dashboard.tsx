@@ -3,7 +3,7 @@ import { useAuth } from "../../hooks/useAuth";
 import { useTodos } from "../../hooks/useTodos";
 import type { Todo } from "../../services/todos";
 import { useNavigate } from "react-router-dom";
-import { useTranslation } from "react-i18next"; // Hook de tradução
+import { useTranslation } from "react-i18next";
 import { CreateTaskCard } from "../../components/CreateTaskCard/CreateTaskCard";
 import { EditTaskModal } from "../../components/EditTaskModal/EditTaskModal";
 import { CalendarView } from "../../components/CalendarView/CalendarView";
@@ -26,7 +26,7 @@ import "./Dashboard.css";
 
 export default function Dashboard({ mode = "all" }) {
   const { user, signOut } = useAuth();
-  const { t, i18n } = useTranslation(); // t para traduzir, i18n para mudar língua
+  const { t, i18n } = useTranslation();
   const {
     todos,
     loading,
@@ -43,10 +43,9 @@ export default function Dashboard({ mode = "all" }) {
 
   const isPlannedMode = mode === "planned";
 
-  // Função para trocar idioma
   const toggleLanguage = () => {
     const langs = ["pt", "en", "fr"];
-    const currentIndex = langs.indexOf(i18n.language.split("-")[0]); // split previne bugs com 'pt-BR'
+    const currentIndex = langs.indexOf(i18n.language.split("-")[0]);
     const nextIndex = (currentIndex + 1) % langs.length;
     i18n.changeLanguage(langs[nextIndex]);
   };

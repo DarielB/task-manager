@@ -13,7 +13,7 @@ export default function Register() {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
-  const [isSuccess, setIsSuccess] = useState(false); // New state for popup
+  const [isSuccess, setIsSuccess] = useState(false);
 
   async function handleRegister(e: React.FormEvent) {
     e.preventDefault();
@@ -26,7 +26,7 @@ export default function Register() {
     setLoading(true);
     try {
       await signUp(email, password);
-      setIsSuccess(true); // Trigger the popup instead of immediate navigate
+      setIsSuccess(true);
     } catch (err: any) {
       setError(err.message || "Erro ao criar conta.");
     } finally {

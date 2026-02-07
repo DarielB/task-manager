@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useAuth } from "../../hooks/useAuth";
 import { useNavigate } from "react-router-dom";
-import { Mail, Lock, LogIn } from "lucide-react"; // Opcional, se não tiver, use emojis
+import { LogIn } from "lucide-react";
 import { Link } from "react-router-dom";
 import "./Login.css";
 

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { X, AlignLeft, Type, Calendar } from "lucide-react";
-import { useTranslation } from "react-i18next"; // 1. Importar o hook
+import { useTranslation } from "react-i18next";
 import type { Todo } from "../../services/todos";
 
 interface EditTaskModalProps {
@@ -10,7 +10,7 @@ interface EditTaskModalProps {
 }
 
 export function EditTaskModal({ todo, onClose, onSave }: EditTaskModalProps) {
-  const { t } = useTranslation(); // 2. Inicializar tradução
+  const { t } = useTranslation();
   const [title, setTitle] = useState(todo.title);
   const [description, setDescription] = useState(todo.description || "");
   const [deadline, setDeadline] = useState("");
@@ -34,7 +34,7 @@ export function EditTaskModal({ todo, onClose, onSave }: EditTaskModalProps) {
     <div className="modal-overlay" onClick={onClose}>
       <div className="edit-modal" onClick={(e) => e.stopPropagation()}>
         <div className="modal-header">
-          <h3>{t("edit_task_details")}</h3> {/* Traduzido */}
+          <h3>{t("edit_task_details")}</h3>
           <button className="close-modal-btn" onClick={onClose}>
             <X size={20} />
           </button>
@@ -43,30 +43,30 @@ export function EditTaskModal({ todo, onClose, onSave }: EditTaskModalProps) {
         <div className="modal-body">
           <div className="modal-input-group">
             <label>
-              <Type size={16} /> {t("title_label")} {/* Traduzido */}
+              <Type size={16} /> {t("title_label")}
             </label>
             <input
               value={title}
               onChange={(e) => setTitle(e.target.value)}
-              placeholder={t("title_placeholder")} // Traduzido
+              placeholder={t("title_placeholder")}
             />
           </div>
 
           <div className="modal-input-group">
             <label>
-              <AlignLeft size={16} /> {t("description")} {/* Traduzido */}
+              <AlignLeft size={16} /> {t("description")}
             </label>
             <textarea
               value={description}
               onChange={(e) => setDescription(e.target.value)}
-              placeholder={t("description_placeholder")} // Traduzido
+              placeholder={t("description_placeholder")}
               rows={5}
             />
           </div>
 
           <div className="modal-input-group">
             <label>
-              <Calendar size={16} /> {t("deadline")} {/* Traduzido */}
+              <Calendar size={16} /> {t("deadline")}
             </label>
             <input
               type="date"
@@ -79,10 +79,10 @@ export function EditTaskModal({ todo, onClose, onSave }: EditTaskModalProps) {
 
         <div className="modal-footer">
           <button className="btn-cancel" onClick={onClose}>
-            {t("cancel")} {/* Traduzido */}
+            {t("cancel")}
           </button>
           <button className="btn-save" onClick={handleSave}>
-            {t("save")} {/* Traduzido */}
+            {t("save")}
           </button>
         </div>
       </div>

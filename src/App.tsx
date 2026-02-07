@@ -10,7 +10,6 @@ export default function App() {
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
 
-      {/* Rota Raiz - Meu Dia */}
       <Route
         path="/"
         element={
@@ -20,7 +19,6 @@ export default function App() {
         }
       />
 
-      {/* Rota Importante */}
       <Route
         path="/important"
         element={
@@ -30,7 +28,6 @@ export default function App() {
         }
       />
 
-      {/* NOVA ROTA: Planejado (Calendário) */}
       <Route
         path="/planned"
         element={
@@ -40,7 +37,6 @@ export default function App() {
         }
       />
 
-      {/* Rota Concluído */}
       <Route
         path="/completed"
         element={
@@ -50,7 +46,6 @@ export default function App() {
         }
       />
 
-      {/* Opcional: Rota 404 para redirecionar caminhos errados */}
       <Route path="*" element={<Dashboard mode="all" />} />
     </Routes>
   );

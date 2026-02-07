@@ -14,7 +14,7 @@ import {
   subMonths,
   parseISO,
 } from "date-fns";
-// Importar os locales necessários
+
 import { ptBR, fr, enUS } from "date-fns/locale";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import type { Todo } from "../../services/todos";
@@ -26,9 +26,7 @@ interface CalendarViewProps {
 }
 
 export function CalendarView({ todos, onEditTask }: CalendarViewProps) {
-  const { t, i18n } = useTranslation(); // Inicializar tradução
-
-  // Lógica para definir o locale do date-fns baseado no i18n
+  const { t, i18n } = useTranslation();
   const currentLocale = i18n.language.startsWith("fr")
     ? fr
     : i18n.language.startsWith("en")
@@ -47,7 +45,6 @@ export function CalendarView({ todos, onEditTask }: CalendarViewProps) {
   const nextMonth = () => setCurrentMonth(addMonths(currentMonth, 1));
   const prevMonth = () => setCurrentMonth(subMonths(currentMonth, 1));
 
-  // Nomes dos dias da semana traduzidos dinamicamente
   const weekDays = i18n.language.startsWith("fr")
     ? ["Dim", "Lun", "Mar", "Mer", "Jeu", "Ven", "Sam"]
     : i18n.language.startsWith("en")

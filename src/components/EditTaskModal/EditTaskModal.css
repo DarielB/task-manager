@@ -7,7 +7,7 @@
   font-size: 15px;
   outline: none;
   width: 100%;
-  color-scheme: dark; /* Essencial para o ícone do calendário ficar branco */
+  color-scheme: dark;
 }
 
 .modal-input-group input[type="date"]:focus {

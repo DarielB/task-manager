@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Plus, Calendar } from "lucide-react";
-import { useTranslation } from "react-i18next"; // 1. Importar o hook
+import { useTranslation } from "react-i18next";
 import "./CreateTaskCard.css";
 import "../../i18n";
 interface CreateTaskCardProps {
@@ -8,7 +8,7 @@ interface CreateTaskCardProps {
 }
 
 export function CreateTaskCard({ onAdd }: CreateTaskCardProps) {
-  const { t } = useTranslation(); // 2. Inicializar a tradução
+  const { t } = useTranslation();
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [deadline, setDeadline] = useState<Date | null>(null);
@@ -36,7 +36,7 @@ export function CreateTaskCard({ onAdd }: CreateTaskCardProps) {
         <Plus size={20} className="plus-icon" />
         <input
           type="text"
-          placeholder={t("add_task")} // 3. Traduzido
+          placeholder={t("add_task")}
           value={title}
           onFocus={() => setIsExpanding(true)}
           onChange={(e) => setTitle(e.target.value)}
@@ -44,7 +44,7 @@ export function CreateTaskCard({ onAdd }: CreateTaskCardProps) {
         />
         {!isExpanding && title.trim() && (
           <button className="add-task-btn-simple" onClick={handleAdd}>
-            {t("create")} {/* 4. Traduzido */}
+            {t("create")}
           </button>
         )}
       </div>
@@ -52,7 +52,7 @@ export function CreateTaskCard({ onAdd }: CreateTaskCardProps) {
       {isExpanding && (
         <div className="input-expanded-content">
           <textarea
-            placeholder={t("description")} // 5. Traduzido
+            placeholder={t("description")}
             value={description}
             onChange={(e) => setDescription(e.target.value)}
             rows={3}
@@ -62,7 +62,7 @@ export function CreateTaskCard({ onAdd }: CreateTaskCardProps) {
           <div className="input-footer-row">
             <div className="input-group-date">
               <label htmlFor="deadline">
-                <Calendar size={14} /> {t("deadline")} {/* 6. Traduzido */}
+                <Calendar size={14} /> {t("deadline")}
               </label>
               <input
                 id="deadline"
@@ -76,14 +76,14 @@ export function CreateTaskCard({ onAdd }: CreateTaskCardProps) {
 
             <div className="input-actions">
               <button className="btn-minimal" onClick={handleCancel}>
-                {t("cancel")} {/* 7. Traduzido */}
+                {t("cancel")}
               </button>
               <button
                 className="add-task-btn"
                 onClick={handleAdd}
                 disabled={!title.trim()}
               >
-                {t("create")} {/* 8. Traduzido */}
+                {t("create")}
               </button>
             </div>
           </div>
